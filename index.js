@@ -294,7 +294,9 @@ function checkForFReactions(message) {
 
 function checkGGEZ(message) {
 	if (message.content === 'ggez') {
-		message.channel.send(ggEZResponses[Math.random(ggEZResponses.length())]);
+		console.log('there are ' + ggEZResponses.length + ' elements in responses');
+		console.log('i randomly picked the number ' + Math.random(ggEZResponses.length));
+		message.channel.send(ggEZResponses[Math.floor(Math.random() * ggEZResponses.length)]);
 	}
 }
 
