@@ -1,2 +1,2 @@
-cd C:\Users\mushhughes\Documents\code\f-bot
+C:\Users\606\Documents\code\FBot
 node index.js
