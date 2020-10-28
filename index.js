@@ -221,6 +221,9 @@ function checkForServerDownMessages(message) {
 
 function checkForFReactions(message) {
 	// F BOT MADNESSSSSSS
+	if (message.content.includes('**big f**'))	 {
+		message.channel.send('🇫');
+	}
 	if (message.content === 'f') {
 		message.react('🇫');
 	}
