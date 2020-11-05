@@ -224,6 +224,29 @@ function checkForFReactions(message) {
 	if (message.content.includes('**big f**'))	 {
 		message.channel.send('🇫');
 	}
+	if (message.content.includes('__**biggest f**__'))	 {
+		const exampleEmbed = new Discord.MessageEmbed()
+			.setColor('#3b88c3')
+		//	.setTitle('The Biggest F')
+		// .setURL('https://discord.js.org/')
+		// .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+		// .setDescription('Some description here')
+		//	.setThumbnail('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/259/regional-indicator-symbol-letter-f_1f1eb.png')
+		// .addFields(
+		//	{ name: 'Regular field title', value: 'Some value here' },
+		//	{ name: '\u200B', value: '\u200B' },
+		//	{ name: 'Inline field title', value: 'Some value here', inline: true },
+		//	{ name: 'Inline field title', value: 'Some value here', inline: true },
+		// )
+		// .addField('Inline field title', 'Some value here', true)
+			.setImage('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/259/regional-indicator-symbol-letter-f_1f1eb.png');
+		//	.setTimestamp()
+		// .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+		message.channel.send(exampleEmbed);
+		console.log('welp, that didn\'t work');
+		// message.channel.send('🇫');
+	}
 	if (message.content === 'f') {
 		message.react('🇫');
 	}
