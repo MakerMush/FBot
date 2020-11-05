@@ -244,7 +244,7 @@ function checkForFReactions(message) {
 		// .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
 		message.channel.send(exampleEmbed);
-		console.log('welp, that didn\'t work');
+		// console.log('welp, that didn\'t work');
 		// message.channel.send('🇫');
 	}
 	if (message.content === 'f') {
