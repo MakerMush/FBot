@@ -8,6 +8,7 @@ const ggEZResponses = ['Wishing you all the best.', 'Well played, I salute you a
 const lastFiveMessages = ['', '', '', '', ''];
 
 client.once('ready', () => {
+	client.user.setActivity('out for what\'s best for all logged into this server', { type: 'WATCHING' });
 	console.log('Ready!');
 });
 
@@ -22,6 +23,7 @@ client.on('message', message => {
 	checkForServerDownMessages(message);
 	checkGGEZ(message);
 	checkForOtherReactions(message);
+	heckleMaples(message);
 
 });
 
@@ -227,25 +229,9 @@ function checkForFReactions(message) {
 	if (message.content.includes('__**biggest f**__'))	 {
 		const exampleEmbed = new Discord.MessageEmbed()
 			.setColor('#3b88c3')
-		//	.setTitle('The Biggest F')
-		// .setURL('https://discord.js.org/')
-		// .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-		// .setDescription('Some description here')
-		//	.setThumbnail('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/259/regional-indicator-symbol-letter-f_1f1eb.png')
-		// .addFields(
-		//	{ name: 'Regular field title', value: 'Some value here' },
-		//	{ name: '\u200B', value: '\u200B' },
-		//	{ name: 'Inline field title', value: 'Some value here', inline: true },
-		//	{ name: 'Inline field title', value: 'Some value here', inline: true },
-		// )
-		// .addField('Inline field title', 'Some value here', true)
 			.setImage('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/259/regional-indicator-symbol-letter-f_1f1eb.png');
-		//	.setTimestamp()
-		// .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
 		message.channel.send(exampleEmbed);
-		// console.log('welp, that didn\'t work');
-		// message.channel.send('🇫');
+
 	}
 	if (message.content === 'f') {
 		message.react('🇫');
@@ -259,13 +245,14 @@ function checkForFReactions(message) {
 		message.react('🇫');
 	}
 
-
-	if (!message.content.includes('http')) {
-		reactTo_F.forEach(async function(validReaction) {
-			if(message.content.includes(validReaction)) {
-				message.react('🇫');
-			}
-		});
+	if (!message.content.includes('rahmoud')) {
+		if (!message.content.includes('http')) {
+			reactTo_F.forEach(async function(validReaction) {
+				if(message.content.includes(validReaction)) {
+					message.react('🇫');
+				}
+			});
+		}
 	}
 	/*
 	if (message.content.includes('😭') || message.content.includes('😢') || message.content.includes('🙁') || message.content.includes('😞') || message.content.includes('☹️') || message.content.includes('😦') || message.content.includes('):') || message.content.includes(':(') || message.content.includes(')=') || message.content.includes('=(') || message.content.includes('D:') || message.content.includes('D=')){
@@ -342,4 +329,9 @@ function scold() {
 	// if
 }
 
+function heckleMaples(message) {
+	if (message.member.user.id == 550493530083164171 || message.member.user.id == 693874282367025192) {
+		message.react('🧢');
+	}
+}
 client.login(process.env.BOT_TOKEN);
