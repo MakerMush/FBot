@@ -24,6 +24,7 @@ client.on('message', message => {
 	checkGGEZ(message);
 	checkForOtherReactions(message);
 	heckleMaples(message);
+	smh(message);
 
 });
 
@@ -325,13 +326,21 @@ function checkForOtherReactions(message) {
 	}
 }
 
+function smh(message) {
+	if (message.content.includes('smh') && !(message.content.includes('smh mh') || message.content.includes('smhmh') || message.content.includes('my head'))) {
+		message.channel.send('*smh my head, <@' + message.member.user.id + '>');
+	}
+}
+
 function scold() {
 	// if
 }
 
 function heckleMaples(message) {
 	if (message.member.user.id == 550493530083164171 || message.member.user.id == 693874282367025192) {
-		message.react('🧢');
+		if(Math.floor(Math.random() * 20)==0) {
+			message.react('🧢');
+		}
 	}
 }
 client.login(process.env.BOT_TOKEN);
