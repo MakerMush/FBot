@@ -338,7 +338,7 @@ function scold() {
 
 function heckleMaples(message) {
 	if (message.member.user.id == 550493530083164171 || message.member.user.id == 693874282367025192) {
-		if(Math.floor(Math.random() * 20)==0) {
+		if(Math.floor(Math.random() * 20) == 	0) {
 			message.react('🧢');
 		}
 	}
